@@ -6,23 +6,23 @@
 #    By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/07 12:19:45 by lel-khou          #+#    #+#              #
-#    Updated: 2022/11/12 15:24:49 by lel-khou         ###   ########.fr        #
+#    Updated: 2024/02/16 12:26:52 by lel-khou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 
-CFLAGS = -g -Wall -Werror -Wextra -I/usr/local/Cellar/readline/8.1/include/
+CFLAGS = -g -Wall -Werror -Wextra -I/opt/local/include
 
 HEADER = minishell.h
 
 LIBFT = libft.a
 
-LIBS = -L./libft -lft
+LIBS = -L ../libft -lft
 
 NAME = minishell
 
-LDFLAGS = -lreadline -L /usr/local/Cellar/readline/8.1/lib/
+LDFLAGS = -lreadline -L /opt/local/lib
 
 SRC = main.c split.c parser.c expander.c utils.c env_list.c env_split.c utils_split.c \
 	remove_space.c export.c utils_free.c utils_export.c split_pipes_redirections.c \
@@ -34,17 +34,17 @@ OBJS = $(SRC:.c=.o)
 all : $(LIBFT) $(NAME)
 
 $(LIBFT) :
-	make -C libft
+	make -C ../libft
 
 $(NAME) : $(OBJS) $(HEADER)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBS) $(LDFLAGS) -o $(NAME)
 
 clean :
 	$(RM) $(OBJS)
-	@make clean -C libft
+	@make clean -C ../libft
 
 fclean : clean
 	$(RM) $(NAME)
-	@make fclean -C libft
+	@make fclean -C ../libft
 
 re : fclean all
