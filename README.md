@@ -1,4 +1,4 @@
-![Project Status](https://img.shields.io/badge/Project_Passed-101%-brightgreen)
+<img src="https://img.shields.io/badge/Passed-101%25-brightgreen" alt="Project Status" width="200">
 
 # Minishell
 Welcome to the Minishell project repository! 
@@ -63,7 +63,7 @@ Now you're ready to explore and interact with our own Minishell!
 
 ## Contributors
 
-![Contributors](https://img.shields.io/badge/Contributors-2-blue)
+<img src="https://img.shields.io/badge/Contributors-2-blue" alt="Contributors" width="200">
 
 - [Yash Kulkarni](https://github.com/Y2Kgunner)
 - [Lara Elkhoury](https://github.com/Larakh88)
